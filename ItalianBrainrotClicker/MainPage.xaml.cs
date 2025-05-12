@@ -1,23 +1,31 @@
-﻿using Plugin.Maui.Audio;
+﻿using System.IO;
+using Plugin.Maui.Audio;
 
 namespace ItalianBrainrotClicker
 {
     public partial class MainPage : ContentPage
     {
-        private readonly IAudioPlayer _player;
+        private readonly Random random = new Random();
+        private Character[] characters =
+        {
+            new Character("tung_tung_tung_sahur.mp3", "tung_tung_tung_sahur.jpg"),
+            new Character("brr_brr_patapim.mp3", "brr_brr_patapim.jpg"),
+            new Character("ballerina_cappucina.mp3", "ballerina_cappucina.jpg")
+        };
+
+        Character character;
 
         public MainPage()
         {
             InitializeComponent();
 
-            var audioManager = AudioManager.Current;
-            var stream = FileSystem.OpenAppPackageFileAsync("gusini.mp3").Result;
-            _player = audioManager.CreatePlayer(stream);
+            character = characters[random.Next(0, characters.Length - 1)];
+            MainButton.Source = character.srcImage;
         }
 
         private void OnPlaySoundClicked(object sender, EventArgs e)
         {
-            _player.Play();
+            AudioManager.Current.CreatePlayer(character.sound).Play();
         }
     }
 

@@ -3,16 +3,7 @@
              x:Class="ItalianBrainrotClicker.MainPage">
 
     <VerticalStackLayout Padding="20" Spacing="30" VerticalOptions="Center">
-        <Label
-            Text="Kliknij przycisk, aby usłyszeć dźwięk" 
-            FontSize="20" 
-            HorizontalOptions="Center" 
-        />
-        <Button
-            Text="Kliknij mnie" 
-            FontSize="24"
-            Clicked="OnPlaySoundClicked"
-        />
+        <ImageButton x:Name="MainButton" Clicked="OnPlaySoundClicked" />
     </VerticalStackLayout>
 
 </ContentPage>
