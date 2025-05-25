@@ -1,9 +1,0 @@
-﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ItalianBrainrotClicker.MainPage">
-
-    <VerticalStackLayout Padding="20" Spacing="30" VerticalOptions="Center">
-        <ImageButton x:Name="MainButton" Clicked="OnPlaySoundClicked" />
-    </VerticalStackLayout>
-
-</ContentPage>

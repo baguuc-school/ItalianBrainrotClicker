@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Plugin.Maui.Audio;
 
-namespace ItalianBrainrotClicker
+namespace ItalianBrainrotClicker.Models
 {
-    internal record Character(String srcSound, String srcImage)
+    internal record CharacterAssets(string srcSound, string srcImage)
     {
         public Stream sound = FileSystem.OpenAppPackageFileAsync(srcSound).Result;
     }
